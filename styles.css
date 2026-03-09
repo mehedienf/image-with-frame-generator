@@ -19,8 +19,8 @@ body {
   min-height: 100vh;
   --font-stack:
     "Inter", 'Tiro Bangla', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-      rgba(79, 70, 229, 0.02),
+    sans-serif(
+      rgba(79 70, 229, 0.02),
       transparent 45%
     ),
     radial-gradient(
@@ -253,9 +253,6 @@ body {
 .adjustment-header h3 {
   margin: 0;
   font-size: 1rem;
-}
-
-.adjustment-status {
 }
 
 .compact-field:last-of-type {
