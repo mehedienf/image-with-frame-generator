@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Frame Generator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>১ম পুনর্মিলন ২০২৬</h1>
+      <p style="font-size: large">সম্মিলনী মাধ্যমিক বিদ্ধালয় বঙ্গেশ্বর্দী</p>
+    </header>
+
+    <main class="app-main">
+      <section class="panel" id="controls-panel">
+        <h2>Controls</h2>
+        <div class="controls-row">
+          <label class="upload-field" aria-label="Upload an image">
+            <input type="file" id="image-input" accept="image/*" />
+            <span class="upload-btn">Upload image</span>
+          </label>
+
+          <div class="select-wrap">
+            <select id="frame-select" aria-label="Choose frame">
+              <option value="" selected disabled>
+                Add PNG overlays inside frames/
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <!-- <p class="field-note">
+          Square PNG frame overlays work best for mobile posts.
+        </p> -->
+
+        <!-- zoom control moved into the adjustment card for closer context -->
+
+        <div class="adjustment-card">
+          <div class="adjustment-header">
+            <h3>Adjust image</h3>
+            <button
+              type="button"
+              id="center-image-btn"
+              class="ghost small-button"
+              disabled
+            >
+              Center
+            </button>
+          </div>
+
+          <label class="field">
+            <span>Zoom <strong id="scale-value">100%</strong></span>
+            <input
+              type="range"
+              id="scale-slider"
+              min="1"
+              max="3"
+              value="1"
+              step="0.01"
+            />
+          </label>
+
+          <!-- adjustment status removed per request -->
+
+          <label class="field compact-field">
+            <span>Left / Right</span>
+            <input
+              type="range"
+              id="horizontal-slider"
+              min="-200"
+              max="200"
+              value="0"
+              step="1"
+              disabled
+            />
+          </label>
+
+          <label class="field compact-field">
+            <span>Up / Down</span>
+            <input
+              type="range"
+              id="vertical-slider"
+              min="-200"
+              max="200"
+              value="0"
+              step="1"
+              disabled
+            />
+          </label>
+
+          <!-- <p class="helper-text">
+            Drag the image or use the sliders for fine adjustment. Export stays
+            square.
+          </p> -->
+        </div>
+
+        <!-- workspace frame selector moved into controls row -->
+
+        <!-- action buttons moved to preview panel -->
+      </section>
+
+      <section class="panel" id="preview-panel">
+        <!-- <h2>Preview</h2> -->
+        <div class="preview-stage" id="preview-stage" data-frame="gallery">
+          <div class="preview-placeholder" id="preview-placeholder">
+            <span
+              >Upload an image to create a square mobile-friendly frame.</span
+            >
+          </div>
+          <img id="preview-image" alt="Uploaded preview" hidden />
+          <img id="frame-overlay" alt="Frame overlay" hidden />
+        </div>
+        <!-- <p class="preview-note">
+          Square preview matches the exported image. Best for mobile posts and
+          story thumbnails.
+        </p> -->
+
+        <div class="actions preview-actions">
+          <button type="button" id="download-btn" disabled>
+            Download image
+          </button>
+          <button type="button" id="reset-btn" class="ghost" disabled>
+            Reset
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="frames/frames.js"></script>
+    <script src="script.js"></script>
+    <footer class="app-footer">
+      <div class="footer-inner">
+        <p style="font-size: large">
+          Developed by <strong>এসএসসি ২০১৯ ব্যাচ</strong>
+        </p>
+        <p class="footer-meta">
+          Developer:
+          <a href="https://www.facebook.com/mehedi.enf" target="_blank">Enam</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
